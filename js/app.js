@@ -310,6 +310,7 @@
     }
     function showAllCards() {
         document.querySelectorAll(".cards__card").forEach((card => {
+            if (!card.classList.contains("_open")) card.classList.add("_open");
             if (!card.classList.contains("_shadow-win") && !card.classList.contains("_shadow-loose") && !card.classList.contains("_shadow-armor")) card.classList.add("_rotate-complete");
         }));
     }
@@ -338,6 +339,7 @@
             if (card.classList.contains("_shadow-loose")) card.classList.remove("_shadow-loose");
             if (card.classList.contains("_shadow-win")) card.classList.remove("_shadow-win");
             if (card.classList.contains("_rotate-complete")) card.classList.remove("_rotate-complete");
+            if (card.classList.contains("_open")) card.classList.remove("_open");
         }));
         if (document.querySelector(".info__card").classList.contains("_visible")) document.querySelector(".info__card").classList.remove("_visible");
     }
@@ -412,6 +414,7 @@
         if (targetElement.closest(".cards__card") && 2 == config_game.state) {
             targetElement.closest(".cards__items").classList.add("_active");
             targetElement.closest(".cards__card").classList.add("_rotate");
+            targetElement.closest(".cards__card").classList.add("_open");
             setTimeout((() => {
                 targetElement.closest(".cards__items").classList.remove("_active");
             }), 1e3);
