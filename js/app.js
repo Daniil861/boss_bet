@@ -143,7 +143,6 @@
     function drawCurerntCoeff() {
         let bet = +sessionStorage.getItem("current-bet");
         if (bet <= 1e3) {
-            console.log("Ставка 1000 или менее");
             bet_coeffs.coeff_1 = .1;
             bet_coeffs.coeff_2 = .7;
             bet_coeffs.coeff_3 = 1;
@@ -152,7 +151,6 @@
             bet_coeffs.coeff_6 = 1.8;
             bet_coeffs.coeff_7 = 2;
         } else if (bet > 1e3 && bet <= 2e3) {
-            console.log("Ставка от 1000 до 2000");
             bet_coeffs.coeff_2 = 1;
             bet_coeffs.coeff_3 = 1.1;
             bet_coeffs.coeff_4 = 1.3;
@@ -160,7 +158,6 @@
             bet_coeffs.coeff_6 = 2;
             bet_coeffs.coeff_7 = 2.5;
         } else if (bet > 2e3) {
-            console.log("Ставка больше 2500");
             bet_coeffs.coeff_3 = 1.5;
             bet_coeffs.coeff_4 = 2;
             bet_coeffs.coeff_5 = 2.5;
@@ -177,7 +174,6 @@
             drawCurerntCoeff();
         }), 500);
         setTimeout((() => {
-            console.log(config_game.numbers);
             config_game.state = 2;
             createAllCards();
         }), 3e3);
@@ -211,7 +207,9 @@
         createCard(config_game.cards[5], config_game.numbers[5], 6, ".cards__items_bottom");
         createCard(config_game.cards[6], config_game.numbers[6], 4, ".cards__items_bottom");
         createCard(config_game.cards[7], config_game.numbers[7], 2, ".cards__items_bottom");
-        showFindCard();
+        setTimeout((() => {
+            showFindCard();
+        }), 500);
     }
     function translateBet() {
         let bet = +sessionStorage.getItem("current-bet");
