@@ -417,7 +417,7 @@
             targetElement.closest(".cards__card").classList.add("_rotate");
             setTimeout((() => {
                 targetElement.closest(".cards__card").classList.add("_open");
-            }), 500);
+            }), 400);
             setTimeout((() => {
                 targetElement.closest(".cards__items").classList.remove("_active");
             }), 1e3);
