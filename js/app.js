@@ -121,6 +121,7 @@
         if (!sessionStorage.getItem("armor")) sessionStorage.setItem("armor", 0);
     }
     function drawCountArmor() {
+        if (!sessionStorage.getItem("armor")) sessionStorage.setItem("armor", 0);
         document.querySelector(".armor__count").textContent = sessionStorage.getItem("armor");
     }
     if (document.querySelector(".game") && document.querySelector(".preloader").classList.contains("_hide")) drawCountArmor();
