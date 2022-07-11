@@ -207,9 +207,7 @@
         createCard(config_game.cards[5], config_game.numbers[5], 6, ".cards__items_bottom");
         createCard(config_game.cards[6], config_game.numbers[6], 4, ".cards__items_bottom");
         createCard(config_game.cards[7], config_game.numbers[7], 2, ".cards__items_bottom");
-        setTimeout((() => {
-            showFindCard();
-        }), 500);
+        showFindCard();
     }
     function translateBet() {
         let bet = +sessionStorage.getItem("current-bet");
@@ -256,7 +254,9 @@
     }
     function showFindCard() {
         document.querySelector(".info__card img").setAttribute("src", `img/game/card-${config_game.find_card}.png`);
-        document.querySelector(".info__card").classList.add("_visible");
+        setTimeout((() => {
+            document.querySelector(".info__card").classList.add("_visible");
+        }), 700);
     }
     function checkGameover(number, block) {
         let bet = +sessionStorage.getItem("current-bet");
