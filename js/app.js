@@ -257,7 +257,7 @@
         document.querySelector(".info__card img").setAttribute("src", `img/game/card-${config_game.find_card}.png`);
         setTimeout((() => {
             document.querySelector(".info__card").classList.add("_visible");
-        }), 700);
+        }), 1500);
     }
     function checkGameover(number, block) {
         let bet = +sessionStorage.getItem("current-bet");
