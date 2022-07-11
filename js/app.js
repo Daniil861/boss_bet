@@ -344,10 +344,8 @@
         if (document.querySelector(".info__card").classList.contains("_visible")) document.querySelector(".info__card").classList.remove("_visible");
     }
     if (document.querySelector(".main")) {
-        const audio_main = new Audio;
+        const audio_main = document.querySelector(".audio_main");
         audio_main.preload = "auto";
-        audio_main.src = "files/audio_m.wav";
-        audio_main.loop = [ true ];
         audio_main.volume = [ .3 ];
         document.addEventListener("click", (e => {
             let targetElement = e.target;
@@ -358,10 +356,8 @@
         }));
     }
     if (document.querySelector(".game")) {
-        const audio_game = new Audio;
+        const audio_game = document.querySelector(".audio_game");
         audio_game.preload = "auto";
-        audio_game.src = "files/audio_g.wav";
-        audio_game.loop = [ true ];
         audio_game.volume = [ .3 ];
         document.addEventListener("click", (e => {
             let targetElement = e.target;
