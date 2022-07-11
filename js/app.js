@@ -415,7 +415,9 @@
         if (targetElement.closest(".cards__card") && 2 == config_game.state) {
             targetElement.closest(".cards__items").classList.add("_active");
             targetElement.closest(".cards__card").classList.add("_rotate");
-            targetElement.closest(".cards__card").classList.add("_open");
+            setTimeout((() => {
+                targetElement.closest(".cards__card").classList.add("_open");
+            }), 500);
             setTimeout((() => {
                 targetElement.closest(".cards__items").classList.remove("_active");
             }), 1e3);
