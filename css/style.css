@@ -228,7 +228,7 @@ body._loaded {
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   overflow: hidden;
   background: url("../img/other/bg-main.jpg") center/cover no-repeat;
 }
@@ -641,16 +641,20 @@ body._loaded {
   }
 }
 
-.main._active .main__card_1 img {
+.main._active .main__card_1 img,
+.main._active .main__card_1 source {
   animation: show_main 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 0.6s;
 }
-.main._active .main__card_2 img {
+.main._active .main__card_2 img,
+.main._active .main__card_2 source {
   animation: show_main 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 0.6s;
 }
-.main._active .main__icon img {
+.main._active .main__icon img,
+.main._active .main__icon source {
   animation: show_main 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 1s;
 }
-.main._active .main__man img {
+.main._active .main__man img,
+.main._active .main__man source {
   animation: show_main 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 1.3s;
 }
 .main._active .main__content {
