@@ -107,7 +107,7 @@
     if (document.querySelector(".icon-anim img")) setInterval((() => {
         getRandomAnimate();
     }), 2e4);
-    const price_armor = 1e3;
+    const price_armor = 7500;
     if (document.querySelector(".main") && document.querySelector(".preloader").classList.contains("_hide")) {
         document.querySelector(".main").classList.add("_active");
         drawPriceArmor();
