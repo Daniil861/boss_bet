@@ -214,11 +214,8 @@
         showFindCard();
     }
     function translateBet() {
-        console.log("===========================");
-        console.log("Проверяем какая ставка, меняем массив");
         let bet = +sessionStorage.getItem("current-bet");
         if (bet >= 2500) config_game.numbers = [ 1, 1, 1, 4, 5, 6, 7, 8 ]; else if (bet >= 1500) config_game.numbers = [ 1, 1, 3, 4, 5, 6, 7, 8 ];
-        console.log(config_game.numbers);
     }
     function shuffleCards() {
         let numbers = shuffle(config_game.numbers);
@@ -236,11 +233,15 @@
             cards__card.classList.remove("_show");
         }), 2e3);
         let cards__front = document.createElement("img");
-        cards__front.setAttribute("src", "img/game/card-bg.png");
+        setTimeout((() => {
+            if (document.documentElement.classList.contains("webp")) cards__front.setAttribute("src", "img/game/card-bg.webp"); else cards__front.setAttribute("src", "img/game/card-bg.png");
+        }), 100);
         cards__front.setAttribute("alt", "Image");
         cards__front.classList.add("cards__front");
         let cards__back = document.createElement("img");
-        cards__back.setAttribute("src", `img/game/card-${item}.png`);
+        setTimeout((() => {
+            if (document.documentElement.classList.contains("webp")) cards__back.setAttribute("src", `img/game/card-${item}.webp`); else cards__back.setAttribute("src", `img/game/card-${item}.png`);
+        }), 1e3);
         cards__back.setAttribute("alt", "Image");
         cards__back.classList.add("cards__back");
         let cards__state = document.createElement("div");

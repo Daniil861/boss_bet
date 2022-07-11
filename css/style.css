@@ -1473,6 +1473,14 @@ body._loaded {
   animation: footer_btn 0.5s ease 2;
 }
 
+.preload-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
 @keyframes no-money {
   0% {
     background: linear-gradient(105.55deg, #dca52f -3.21%, #fdf890 36.57%, #fffff6 52.16%, #e2ad37 69.9%, #d4972a 100%);
