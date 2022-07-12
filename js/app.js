@@ -375,7 +375,12 @@
             sessionStorage.setItem("preloader", true);
             preloader.classList.add("_hide");
             wrapper.classList.add("_visible");
-            if (document.querySelector(".main") && document.querySelector(".preloader").classList.contains("_hide")) document.querySelector(".main").classList.add("_active");
+            if (document.querySelector(".main") && document.querySelector(".preloader").classList.contains("_hide")) {
+                document.querySelector(".main").classList.add("_active");
+                drawPriceArmor();
+                drawStorrStartArmor();
+                drawCountArmor();
+            }
         }
         if (targetElement.closest(".content-main__button_shop")) document.querySelector(".main__body").classList.add("_shop");
         if (targetElement.closest(".main__button-home")) document.querySelector(".main__body").classList.remove("_shop");
